@@ -1,16 +1,17 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { listen } from './redux/listener';
+import { AppRoutes } from './routes';
 
 function App() {
+  useEffect(() => {
+    listen();
+  }, []);
+
   return (
     <BrowserRouter>
-      <Routes>
-        {/* <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-          </Route> */}
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   );
 }
