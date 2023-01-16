@@ -5,12 +5,13 @@ import SBreadCrumb from "../../components/Breadcrumb";
 import Button from "../../components/Button";
 import Table from "../../components/TableWithAction";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPayments } from "../../redux/payments/actions";
+
 import SAlert from "../../components/Alert";
 import Swal from "sweetalert2";
 import { deleteData } from "../../utils/fetch";
 import { setNotif } from "../../redux/notif/actions";
 import { accessPayments } from "../../const/access";
+import { fetchPayments } from "../../redux/payments/actions";
 
 function PaymentsPage() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function PaymentsPage() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchPayments());
+    dispatch(fetchPayments);
   }, [dispatch]);
 
   const handleDelete = (id) => {
