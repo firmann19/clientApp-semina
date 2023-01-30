@@ -32,35 +32,35 @@ function SNavbar() {
   };
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg='dark' variant='dark'>
       <Container>
-        <Navbar.Brand href="#home">Dashboard</Navbar.Brand>
-        <Nav className="me-auto">
+        <Navbar.Brand href='#home'>Dashboard</Navbar.Brand>
+        <Nav className='me-auto'>
           <NavLink
             role={role}
             roles={accessCategories.lihat}
-            action={() => navigate("/")}
+            action={() => navigate('/')}
           >
             Home
           </NavLink>
           <NavLink
             role={role}
             roles={accessCategories.lihat}
-            action={() => navigate("/categories")}
+            action={() => navigate('/categories')}
           >
             Categories
           </NavLink>
           <NavLink
             role={role}
             roles={accessTalents.lihat}
-            action={() => navigate("/talents")}
+            action={() => navigate('/talents')}
           >
             Talents
           </NavLink>
           <NavLink
             role={role}
             roles={accessPayments.lihat}
-            action={() => navigate("/payments")}
+            action={() => navigate('/payments')}
           >
             Payment
           </NavLink>
@@ -74,26 +74,26 @@ function SNavbar() {
           <NavLink
             role={role}
             roles={accessEvents.lihat}
-            action={() => navigate("/events")}
+            action={() => navigate('/events')}
           >
             Events
           </NavLink>
           <NavLink
             role={role}
             roles={accessParticipant.lihat}
-            action={() => navigate("/participant")}
+            action={() => navigate('/participant')}
           >
             Participant
           </NavLink>
           <NavLink
             role={role}
             roles={accessOrders.lihat}
-            action={() => navigate("/orders")}
+            action={() => navigate('/orders')}
           >
             Orders
           </NavLink>
         </Nav>
-        <Nav className="justify-content-end">
+        <Nav className='justify-content-end'>
           <Nav.Link onClick={() => handleLogout()}>Logout</Nav.Link>
         </Nav>
       </Container>
