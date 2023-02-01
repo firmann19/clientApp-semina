@@ -4,11 +4,11 @@ import NavLink from "../NavAccess";
 import { useNavigate } from "react-router-dom";
 import {
   accessCategories,
-  accessTalents,
-  accessEvents,
-  accessParticipant,
-  accessPayments,
-  accessOrders,
+ // accessTalents,
+ // accessEvents,
+ // accessParticipant,
+ // accessPayments,
+ // accessOrders,
 } from "../../const/access";
 
 function SNavbar() {
@@ -32,18 +32,18 @@ function SNavbar() {
   };
 
   return (
-    <Navbar bg='dark' variant='dark'>
+    <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href='#home'>Dashboard</Navbar.Brand>
-        <Nav className='me-auto'>
+        <Navbar.Brand href="#home">Dashboard</Navbar.Brand>
+        <Nav className="me-auto">
           <NavLink
             role={role}
             roles={accessCategories.lihat}
-            action={() => navigate('/')}
+            action={() => navigate("/")}
           >
             Home
           </NavLink>
-          <NavLink
+          {/*   <NavLink
             role={role}
             roles={accessCategories.lihat}
             action={() => navigate('/categories')}
@@ -70,7 +70,7 @@ function SNavbar() {
             action={() => navigate('/organizers')}
           >
             Oranizer
-          </NavLink> */}
+          </NavLink> 
           <NavLink
             role={role}
             roles={accessEvents.lihat}
@@ -91,9 +91,9 @@ function SNavbar() {
             action={() => navigate('/orders')}
           >
             Orders
-          </NavLink>
+          </NavLink> */}
         </Nav>
-        <Nav className='justify-content-end'>
+        <Nav className="justify-content-end">
           <Nav.Link onClick={() => handleLogout()}>Logout</Nav.Link>
         </Nav>
       </Container>
