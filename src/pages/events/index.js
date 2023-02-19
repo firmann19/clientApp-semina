@@ -91,7 +91,7 @@ function EventPage() {
           )
         );
 
-        dispatch(fetchEvents());
+        dispatch(fetchEvents()); 
       }
     });
   };

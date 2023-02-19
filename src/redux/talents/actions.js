@@ -11,12 +11,14 @@ import { clearNotif } from "../notif/actions";
 
 let debouncedFetchTalents = debounce(getData, 1000);
 
+// Start
 export const startFetchingTalents = () => {
   return {
     type: START_FETCHING_TALENTS,
   };
 };
 
+// Success
 export const successFetchingTalents = ({ talents }) => {
   return {
     type: SUCCESS_FETCHING_TALENTS,
@@ -24,12 +26,16 @@ export const successFetchingTalents = ({ talents }) => {
   };
 };
 
+
+// Error
 export const errorFetchingTalents = () => {
   return {
     type: ERROR_FETCHING_TALENTS,
   };
 };
 
+
+// Get Talents
 export const fetchTalents = () => {
   return async (dispatch, getState) => {
     dispatch(startFetchingTalents());
@@ -43,7 +49,7 @@ export const fetchTalents = () => {
         keyword: getState().talents.keyword,
       };
 
-      let res = await debouncedFetchTalents("/cms/talents", params);
+      let res = await debouncedFetchTalents('/cms/talents', params);
 
       res.data.data.forEach((res) => {
         res.avatar = res.image.name;
