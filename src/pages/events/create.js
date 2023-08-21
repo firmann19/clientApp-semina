@@ -103,13 +103,15 @@ function EventsCreate() {
         });
       }
     } else if (e.target.name === "category" || e.target.name === "talent") {
-      console.log("e.target.name");
-      console.log(e.target.name);
       setForm({ ...form, [e.target.name]: e });
     } else {
       setForm({ ...form, [e.target.name]: e.target.value });
+      console.log(e.target.value)
+      console.log("e.target.value")
     }
   };
+
+  
 
   const handleSubmit = async () => {
     setIsLoading(true);
@@ -128,8 +130,12 @@ function EventsCreate() {
       status: form.status,
       tickets: form.tickets,
     };
+    console.log(payload);
+    console.log("payload");
 
     const res = await postData("/cms/events", payload);
+    console.log(res)
+    console.log("res")
 
     if (res.data.data) {
       dispatch(

@@ -21,6 +21,7 @@ function SNavbar() {
         ? JSON.parse(localStorage.getItem("auth"))
         : {};
 
+        console.log("firman", role)
       setRole(role);
     };
     fetchData();
