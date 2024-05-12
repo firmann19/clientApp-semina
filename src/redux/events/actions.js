@@ -48,6 +48,7 @@ export const fetchEvents = () => {
       };
 
       let res = await debouncedFetchEvents("/cms/events", params);
+      console.log("test", res);
 
       res.data.data.forEach((res) => {
         res.categoryName = res?.category?.name ?? "";
